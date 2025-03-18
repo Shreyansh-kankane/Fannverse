@@ -5,6 +5,9 @@ import Footer from '@/components/Footer'
 import SportsCarousel from '@/components/SportsCarousel'
 import RegistrationForm from '@/components/RegisterationForm'
 
+import { useState } from 'react'
+
+
 import { motion } from "framer-motion";
 
 import { fadeInUp, containerVariants } from '@/motionVariants/variants'
@@ -26,9 +29,9 @@ export default function Home() {
           <Image 
             src="/logo.png" 
             alt="Fannverse" 
-            width={120} 
-            height={120}
-            className="h-12 w-auto z-100"
+            width={140} 
+            height={140}
+            className="h-16 w-auto z-100"
           />
         </div>
       </motion.nav>
@@ -39,6 +42,19 @@ export default function Home() {
         animate="visible"
         variants={fadeInUp}
       >
+       
+
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+            <Image 
+              src="/player2.png" 
+              alt="Fannverse Players" 
+              width={600} 
+              height={600}
+              className="mx-auto"
+            />
+        </div>
+
         <div>
           <h1 className="text-center text-white text-4xl md:text-6xl font-bold mt-16">
             India's first sports Rmg platform
@@ -46,17 +62,6 @@ export default function Home() {
           <p className="text-center text-white text-lg mt-4">
             Casino Of DFS
           </p>
-        </div>
-
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-            <Image 
-              src="/player2.png" 
-              alt="Fannverse Players" 
-              width={500} 
-              height={500}
-              className="mx-auto"
-            />
         </div>
     
       </motion.section>
@@ -73,29 +78,12 @@ export default function Home() {
            Fantasy Games on <span className="text-purple-700">Fannverse</span>
           </h2>
           
-          <div className="flex justify-center items-center gap-8 flex-wrap">
-            <div className="bg-white rounded-xl shadow-md p-2 flex items-center justify-center">
+          <div className="flex justify-center items-center gap-4 flex-wrap">
+
+          <div className="bg-white rounded-xl shadow-md p-2 flex items-center justify-center">
               <Image 
-                src="/cricket-en.avif" 
+                src="/cricket.webp" 
                 alt="BCCI" 
-                width={150} 
-                height={150}
-                className="object-contain hover:scale-110 transition-all duration-300"
-              />
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-2 flex items-center justify-center">
-              <Image 
-                src="/basketball-en.avif" 
-                alt="PKL" 
-                width={150} 
-                height={150}
-                className="object-contain hover:scale-110 transition-all duration-300"
-              />
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-2 flex items-center justify-center">
-              <Image 
-                src="/tennis-en.avif" 
-                alt="SA20" 
                 width={150} 
                 height={150}
                 className="object-contain hover:scale-110 transition-all duration-300"
@@ -110,6 +98,63 @@ export default function Home() {
                 className="object-contain hover:scale-110 transition-all duration-300"
               />
             </div>
+            <div className="bg-white rounded-lg shadow-md p-2 flex items-center justify-center">
+              <Image 
+                src="/F1.webp" 
+                alt="WPL" 
+                width={150} 
+                height={150}
+                className="object-contain hover:scale-110 transition-all duration-300"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-2 flex items-center justify-center">
+              <Image 
+                src="/kabaddi.webp" 
+                alt="WPL" 
+                width={150} 
+                height={150}
+                className="object-contain hover:scale-110 transition-all duration-300"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-2 flex items-center justify-center">
+              <Image 
+                src="/MMA.webp" 
+                alt="WPL" 
+                width={150} 
+                height={150}
+                className="object-contain hover:scale-110 transition-all duration-300"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-2 flex items-center justify-center">
+              <Image 
+                src="/NBA.webp" 
+                alt="WPL" 
+                width={150} 
+                height={150}
+                className="object-contain hover:scale-110 transition-all duration-300"
+              />
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md p-2 flex items-center justify-center">
+              <Image 
+                src="/basketball.webp" 
+                alt="BCCI" 
+                width={150} 
+                height={150}
+                className="object-contain hover:scale-110 transition-all duration-300"
+              />
+            </div>
+            <div className="bg-white rounded-xl shadow-md p-2 flex items-center justify-center">
+              <Image 
+                src="/tennis.webp" 
+                alt="BCCI" 
+                width={150} 
+                height={150}
+                className="object-contain hover:scale-110 transition-all duration-300"
+              />
+            </div>
+           
+
           </div>
         </div>
 
@@ -182,7 +227,24 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <RegistrationForm />
+      <div className='md:flex bg-purple-200 gap-10 justify-center items-center'>
+        <div className='relative'>
+          <video src="/video1.mp4"
+            autoPlay
+            loop
+            className="object-cover z-0 p-4 mx-auto"
+            width={600}
+            height={600}
+            playsInline
+            controls
+          >
+          </video>
+        </div>
+        
+        <RegistrationForm />
+
+      </div>
+
 
       {/* Get the App Section */}
       <motion.section className="py-16 bg-gray-50"
@@ -199,7 +261,7 @@ export default function Home() {
             {/* App Screenshots */}
             <div className="flex-1 relative">
               <Image 
-                src="/getApp.jpg"
+                src="/getApp4.png"
                 alt="Fannverse App Screenshots"
                 width={600}
                 height={600}
@@ -245,7 +307,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <div className="container mx-auto py-12 bg-purple-100">
+      <div className="mx-auto py-12 bg-purple-100">
         <h1 className="text-3xl font-bold text-center mb-8">
           Popular <span className="text-purple-700">Fantasy Sports</span> in India
         </h1>
