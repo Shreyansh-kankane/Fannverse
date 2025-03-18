@@ -60,17 +60,21 @@ export default function Home() {
             India's First Sports RMG Platform
           </h1>
 
-            <TypeAnimation
-                sequence={[
-                  'Multiverse of Daily Fantasy Sports',
-                  1000,
-                ]}
-                wrapper="span"
-                speed={50}
-                style={{ display: 'inline-block'}}
-                className='text-center text-white text-lg mt-4'
-                repeat={Infinity}
-              />
+          <TypeAnimation
+            sequence={[
+              'Multiverse of Daily Fantasy Sports', // Text to be typed
+              1000, // Wait for 1 second
+              '', // Erase the text
+              500, // Wait for 0.5 seconds after erasing
+              'Multiverse of Daily Fantasy Sports', // Re-type the text
+              1000, // Wait for 1 second
+            ]}
+            wrapper="span"
+            speed={50} // Typing speed
+            style={{ display: 'inline-block' }}
+            className="text-center text-white text-lg mt-4"
+            repeat={Infinity} // Repeat indefinitely
+          />
 
           {/* <p className="text-center text-white text-lg mt-4">
             Multiverse of Daily Fantasy Sports
