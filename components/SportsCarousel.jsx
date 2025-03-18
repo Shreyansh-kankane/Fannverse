@@ -52,6 +52,18 @@ const sportsData = [
     icon: '🏎️',
     description: 'Build your dream F1 team with drivers and constructors from the current season.',
   },
+  {
+    id: 10,
+    title: 'Fantasy Cricket',
+    icon: '🏏',
+    description: 'Play premier cricket leagues like TATA IPL 2024, Big Bash League, and Caribbean Premier League. Create your dream team and compete with millions of players.',
+  },
+  {
+    id: 11,
+    title: 'Fantasy Kabaddi',
+    icon: '🤼',
+    description: 'Experience India\'s beloved sport in fantasy format. Create your Pro Kabaddi League dream team and compete for glory.',
+  }
 ];
 
 const SportsCard = ({ title, icon, description }) => (
@@ -70,7 +82,24 @@ const SportsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const totalSlides = Math.ceil(sportsData.length / 3);
+  const [totalSlides, setTotalSlides] = useState(sportsData.length / 3)
+
+  useEffect(() => {
+    // Function to check screen width
+    const checkScreenSize = () => {
+      if (window.innerWidth <= 768) {
+        setTotalSlides( Math.ceil(sportsData.length)  )
+      } else {
+        setTotalSlides( Math.ceil(sportsData.length) / 3 );
+      }
+    };
+    // Call function initially to set device type
+    checkScreenSize();
+    // Add event listener to handle resizing
+    window.addEventListener('resize', checkScreenSize);
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const moveCarousel = (direction) => {
     setCurrentSlide((prev) => {
@@ -89,18 +118,21 @@ const SportsCarousel = () => {
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
+
+  // check if the page is 
+
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 py-8">
       {/* Navigation Arrows */}
       <button
-        className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg text-gray-800 hover:text-gray-900 transition-all"
+        className="hidden md:absolute left-[-40px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg text-gray-800 hover:text-gray-900 transition-all"
         onClick={() => moveCarousel(-1)}
       >
         <ChevronLeftIcon className="w-6 h-6" />
       </button>
       
       <button
-        className="absolute right-[-40px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg text-gray-800 hover:text-gray-900 transition-all"
+        className="hidden md:absolute right-[-40px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg text-gray-800 hover:text-gray-900 transition-all"
         onClick={() => moveCarousel(1)}
       >
         <ChevronRightIcon className="w-6 h-6" />

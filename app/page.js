@@ -4,8 +4,8 @@ import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 import SportsCarousel from '@/components/SportsCarousel'
 import RegistrationForm from '@/components/RegisterationForm'
-
-import { useState } from 'react'
+import DotPattern from '@/components/DotPattern'
+import { TypeAnimation } from 'react-type-animation'
 
 
 import { motion } from "framer-motion";
@@ -55,13 +55,26 @@ export default function Home() {
             />
         </div>
 
-        <div>
+        <div className='text-center'>
           <h1 className="text-center text-white text-4xl md:text-6xl font-bold mt-16">
-            India's first sports Rmg platform
+            India's First Sports RMG Platform
           </h1>
-          <p className="text-center text-white text-lg mt-4">
-            Casino Of DFS
-          </p>
+
+            <TypeAnimation
+                sequence={[
+                  'Multiverse of Daily Fantasy Sports',
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ display: 'inline-block'}}
+                className='text-center text-white text-lg mt-4'
+                repeat={Infinity}
+              />
+
+          {/* <p className="text-center text-white text-lg mt-4">
+            Multiverse of Daily Fantasy Sports
+          </p> */}
         </div>
     
       </motion.section>
@@ -173,46 +186,48 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             
             {/* Step 1 */}
-            <div className="relative p-4 bg-white rounded-lg shadow-md">
+            <div className="relative p-4 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
               <div className="absolute -top-5 left-6">
                 <div className="w-10 h-10 bg-purple-800 rounded-full flex items-center justify-center text-white font-bold">
                   1
                 </div>
               </div>
               <div className="mt-4">
-                <h3 className="font-bold text-lg mb-2">Select A Match</h3>
+                <h3 className="font-bold text-lg mb-2">Select a sport 
+                </h3>
                 <p className="text-gray-600">Choose an upcoming match that you want to play</p> 
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="relative p-4 bg-white rounded-lg shadow-md">
+            <div className="relative p-4 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
               <div className="absolute -top-5 left-6">
                 <div className="w-10 h-10 bg-purple-800 rounded-full flex items-center justify-center text-white font-bold">
                   2
                 </div>
               </div>
               <div className="mt-4">
-                <h3 className="font-bold text-lg mb-2">Select the game</h3>
+                <h3 className="font-bold text-lg mb-2">Select a match and format</h3>
                 <p className="text-gray-600">Pick the game you want to play</p>
                 
               </div>
             </div>
 
-            <div className="relative p-4 bg-white rounded-lg shadow-md">
+            <div className="relative p-4 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
               <div className="absolute -top-5 left-6">
                 <div className="w-10 h-10 bg-purple-800 rounded-full flex items-center justify-center text-white font-bold">
                   3
                 </div>
               </div>
               <div className="mt-4">
-                <h3 className="font-bold text-lg mb-2">Join Contest</h3>
+                <h3 className="font-bold text-lg mb-2">Join contest
+                </h3>
                 <p className="text-gray-600">Use your skills to pick the right players</p>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="relative p-4 bg-white rounded-lg shadow-md">
+            <div className="relative p-4 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
               <div className="absolute -top-5 left-6">
                 <div className="w-10 h-10 bg-purple-800 rounded-full flex items-center justify-center text-white font-bold">
                   4
@@ -232,19 +247,19 @@ export default function Home() {
           <video src="/video1.mp4"
             autoPlay
             loop
-            className="object-cover z-0 p-4 mx-auto"
+            className="object-cover z-20 p-4 mx-auto"
             width={600}
             height={600}
             playsInline
             controls
           >
           </video>
+          <DotPattern classes={'top-[-50px] left-[-50px] w-[200px] h-[200px] z-[10]'} />
         </div>
         
         <RegistrationForm />
 
       </div>
-
 
       {/* Get the App Section */}
       <motion.section className="py-16 bg-gray-50"
@@ -257,51 +272,79 @@ export default function Home() {
             Dont just watch sports,<span className="text-purple-700"> compete along</span>
           </h2>
 
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto px-4">
             {/* App Screenshots */}
             <div className="flex-1 relative">
               <Image 
-                src="/getApp4.png"
+                src="/getApp5.png"
                 alt="Fannverse App Screenshots"
-                width={600}
-                height={600}
-                className="w-full max-w-lg mx-auto rounded-lg hover:scale-110 transition-all duration-300"
+                width={500}
+                height={500}
+                className="w-md mx-auto rounded-lg hover:scale-110 transition-all duration-300"
               />
             </div>
 
             {/* Features and Download Links */}
-            <div className="flex-1 space-y-8">
+            <div className="flex-1 ">
               {/* Features List */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-8 h-8">
+                  <div className="w-10 h-10">
                     <svg viewBox="0 0 24 24" className="w-full h-full text-gray-600">
                       <path fill="currentColor" d="M21,6H3A2,2 0 0,0 1,8V16A2,2 0 0,0 3,18H21A2,2 0 0,0 23,16V8A2,2 0 0,0 21,6M21,16H3V8H21Z" />
                     </svg>
                   </div>
                   <p className="text-gray-700 text-lg">
-                    New interactive games that allows u to engage in every second of the match {' '}
+                  <span className='text-purple-700 font-bold'>Stay Engaged, Every Moment: </span>
+                    Immerse yourself in interactive games that keep you hooked throughout the match. {' '}
                   </p>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-8 h-8">
+                  <div className="w-10 h-10">
                     <svg viewBox="0 0 24 24" className="w-full h-full text-gray-600">
                       <path fill="currentColor" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" />
                     </svg>
                   </div>
-                  <p className="text-gray-700 text-lg">Play with family , playwith friends , or compete over sports </p>
+                  <p className="text-gray-700 text-lg">
+                  <span className='text-purple-700 font-bold'> 
+                    Compete with Family, Friends, or Global Sports Enthusiasts {" "}
+                  </span>
+                    Play together, challenge each other, or face off against sports fans from around the world.  
+                  </p>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-8 h-8">
+                  <div className="w-10 h-10">
                     <svg viewBox="0 0 24 24" className="w-full h-full text-gray-600">
                       <path fill="currentColor" d="M12,8L10.67,8.09C9.81,7.07 7.4,4.5 5,4.5C5,4.5 3.03,7.46 4.96,11.41C4.41,12.24 4.07,12.67 4,13.66L2.07,13.95L2.28,14.93L4.04,14.67L4.18,15.38L2.61,16.32L3.08,17.21L4.53,16.32C5.68,18.76 8.59,20 12,20C15.41,20 18.32,18.76 19.47,16.32L20.92,17.21L21.39,16.32L19.82,15.38L19.96,14.67L21.72,14.93L21.93,13.95L20,13.66C19.93,12.67 19.59,12.24 19.04,11.41C20.97,7.46 19,4.5 19,4.5C16.6,4.5 14.19,7.07 13.33,8.09L12,8M9,11A1,1 0 0,1 10,12A1,1 0 0,1 9,13A1,1 0 0,1 8,12A1,1 0 0,1 9,11M15,11A1,1 0 0,1 16,12A1,1 0 0,1 15,13A1,1 0 0,1 14,12A1,1 0 0,1 15,11M11,14H13L12.3,15.39C12.5,16.03 13.06,16.5 13.75,16.5A1.5,1.5 0 0,0 15.25,15H15.75A2,2 0 0,1 13.75,17C13,17 12.35,16.59 12,16V16H12C11.65,16.59 11,17 10.25,17A2,2 0 0,1 8.25,15H8.75A1.5,1.5 0 0,0 10.25,16.5C10.94,16.5 11.5,16.03 11.7,15.39L11,14Z" />
                     </svg>
                   </div>
-                  <p className="text-gray-700 text-lg">Refer and get fannvers NFT</p>
+                  <p className="text-gray-700 text-lg">
+                 
+                  <span className='text-purple-700 font-bold'> 
+                    Refer & Unlock Exclusive Rewards {" "}
+                  </span>
+                  Invite others and earn FanVerse NFTs for exciting rewards!
+                  </p>
                 </div>
               </div>
+
+              <div className='flex justify-center items-center gap-4 mt-8'> 
+                <Image 
+                  src={'/coin-wbg.png'}
+                  alt="Fannverse NFT"
+                  width={200}
+                  height={200}
+                  className='w-48 h-48 object-contain hover:scale-125 transition-all duration-300'
+
+                />
+
+                <h3 className='text-lg md:text-4xl text-purple-700 font-bold '> Win Fannverse NFT</h3>
+
+              </div>
+
+
             </div>
           </div>
         </div>

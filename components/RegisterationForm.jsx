@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -60,7 +61,19 @@ const RegistrationForm = () => {
         transition={{ delay: 0.2 }}
         className="bg-gradient-to-br from-purple-100 to-blue-100 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center shadow-2xl"
     >
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-md w-full space-y-4">
+
+        <div className='text-center'>
+          <Image 
+            src={"/logo.png"}
+            alt="Fannverse"
+            width={50}
+            height={50}
+            className='mx-auto'
+          />
+
+        </div>
+
         <div className="text-center">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
